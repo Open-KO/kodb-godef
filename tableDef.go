@@ -77,6 +77,7 @@ type ParamDef struct {
 	Description string        `json:"description"`
 	Type        tsql.TSqlType `json:"type"`
 	Length      int           `json:"length"`
+	ParamIndex  int           `json:"paramIndex" gorm:"column:paramIndex"`
 	IsOutput    bool          `json:"isOutput" gorm:"column:isOutput"`
 }
 
