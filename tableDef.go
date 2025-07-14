@@ -69,6 +69,7 @@ type ProcDef struct {
 	ClassName   string     `json:"className"`
 	Description string     `json:"description"`
 	Params      []ParamDef `json:"params"`
+	HasReturn   bool       `json:"hasReturn" gorm:"column:hasReturn"`
 }
 
 type ParamDef struct {
