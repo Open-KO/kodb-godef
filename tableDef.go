@@ -66,6 +66,7 @@ type Union struct {
 
 type ProcDef struct {
 	Name        string     `json:"name"`
+	ClassName   string     `json:"className"`
 	Description string     `json:"description"`
 	Params      []ParamDef `json:"params"`
 }
