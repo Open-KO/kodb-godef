@@ -76,7 +76,7 @@ type ParamDef struct {
 	Description string        `json:"description"`
 	Type        tsql.TSqlType `json:"type"`
 	Length      int           `json:"length"`
-	IsOutput    int           `json:"isOutput" gorm:"column:isOutput"`
+	IsOutput    bool          `json:"isOutput" gorm:"column:isOutput"`
 }
 
 func (this *Column) GormType() string {
