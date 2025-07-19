@@ -34,7 +34,7 @@ type Column struct {
 	AllowNull     bool          `json:"allowNull,omitempty"`    // Can the column's value be null?
 	Length        int           `json:"length,omitempty"`       // length specifier for array types
 	Enums         []Enum        `json:"enums,omitempty"`        // array of enumerated values
-	IsHexProtect  bool          `json:"isHexProtect,omitempty"` // Should this column be read with a convert function to varbinary, and written back with a convert to original?
+	ForceBinary   bool          `json:"forceBinary,omitempty"`  // Should this column be read with a convert function to varbinary, and written back with a convert to original?
 	CollationName *string       `json:"collationName,omitempty"`
 	CharacterSet  *string       `json:"characterSet,omitempty"`
 }
@@ -80,6 +80,7 @@ type ParamDef struct {
 	Length      int           `json:"length"`
 	ParamIndex  int           `json:"paramIndex" gorm:"column:paramIndex"`
 	IsOutput    bool          `json:"isOutput" gorm:"column:isOutput"`
+	ForceBinary bool          `json:"forceBinary,omitempty"`
 }
 
 func (this *Column) GormType() string {
