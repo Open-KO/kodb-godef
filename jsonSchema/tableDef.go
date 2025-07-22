@@ -65,11 +65,12 @@ type Union struct {
 }
 
 type ProcDef struct {
-	Name        string     `json:"name"`
-	ClassName   string     `json:"className"`
-	Description string     `json:"description"`
-	Params      []ParamDef `json:"params"`
-	HasReturn   *bool      `json:"hasReturn,omitempty"`
+	Database    dbType.DbType `json:"database"` // Which database this proc should be executed against
+	Name        string        `json:"name"`
+	ClassName   string        `json:"className"`
+	Description string        `json:"description"`
+	Params      []ParamDef    `json:"params"`
+	HasReturn   *bool         `json:"hasReturn,omitempty"`
 }
 
 type ParamDef struct {
