@@ -37,6 +37,7 @@ type Column struct {
 	ForceBinary   bool          `json:"forceBinary,omitempty"`  // Should this column be read with a convert function to varbinary, and written back with a convert to original?
 	CollationName *string       `json:"collationName,omitempty"`
 	CharacterSet  *string       `json:"characterSet,omitempty"`
+	AutoIncrement bool          `json:"autoIncrement,omitempty"`
 }
 
 type IndexDef struct {
